@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Enemy\EnemySpawn.cs">
+    <Files>
+      <File FileName="Assets\Enemy\Enemy_Shoot.cs" Line="7" Column="1" />
+      <File FileName="Assets\Player\PLayer_Shoot.cs" Line="114" Column="60" />
+      <File FileName="Assets\Enemy\eshoot2.cs" Line="46" Column="53" />
+      <File FileName="Assets\Enemy\EnemySpawn.cs" Line="12" Column="21" />
+      <File FileName="Assets\Enemy\EDam.cs" Line="7" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
