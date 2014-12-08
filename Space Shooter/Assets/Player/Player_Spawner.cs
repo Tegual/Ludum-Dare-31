@@ -15,15 +15,21 @@ public class Player_Spawner : MonoBehaviour
 
 	public int numLives = 4;
 	
-	public float respawn;
+	public float respawn = 3.5f;
 	
 	// Use this for initialization
 	void Start () 
 	{
+		respawn = 1.5f;
 		db = GameObject.Find ("_Scripts&GUI");
 		spawn = GameObject.Find ("LifeText");
 		got2 = GameObject.Find("Overgame");
-		SpawnPlayer();
+		got2.SetActive(false);
+	}
+
+	public void begingame()
+	{
+		numLives = 4;
 	}
 
 	public void lifeadd ()
@@ -31,19 +37,20 @@ public class Player_Spawner : MonoBehaviour
 		numLives ++;
 	}
 
-	void SpawnPlayer() {
+	void SpawnPlayer() 
+	{
 		numLives = numLives - 1;
-		respawn = 1.5f;
+		respawn = 2.5f;
 		spawn.GetComponent<Lives>().SendMessage("lifeset");
 		playerExist = (GameObject)Instantiate(player, transform.position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		if(playerExist == null && numLives > 0) 
 		{
 			respawn = respawn - Time.deltaTime;
-			
 			if(respawn < 0)
 			{
 				SpawnPlayer();
@@ -55,7 +62,7 @@ public class Player_Spawner : MonoBehaviour
 			{
 				got2.SetActive(false);
 			}
-			if(playerExist == null && numLives == 0) 
+			if(numLives <= 0)// && playerExist == null) 
 			{
 				got2.SetActive(true);
 				AudioSource.PlayClipAtPoint(loser, transform.position);

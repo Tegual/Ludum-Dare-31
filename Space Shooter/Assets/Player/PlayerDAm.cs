@@ -21,6 +21,10 @@ public class PlayerDAm : MonoBehaviour
 			db = GameObject.Find ("_Scripts&GUI");
 			db.SendMessage("Health");
 		}
+		if(playerSprite != null) 
+		{
+			playerSprite.enabled = true;
+		}
 		gameObject.layer = 8;
 
 		startlayer = gameObject.layer;
@@ -69,6 +73,14 @@ public class PlayerDAm : MonoBehaviour
 				}
 			}
 		}
+		if(invulnerabilitytimer <= 0) 
+		{
+			if(playerSprite != null) 
+			{
+				playerSprite.enabled = true;
+			}
+		}
+
 
 		if (Health <=0)
 		{
